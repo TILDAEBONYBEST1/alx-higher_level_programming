@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Create a Class Square with size"""
+"""Create a Class Square with size and method of area"""
 
 
 class Square:
@@ -13,3 +13,7 @@ class Square:
             raise (ValueError("size must be >= 0"))
         else:
             self.__size = size
+
+    def area(self):
+        """Method to get the area of the Square"""
+        return (self.__size ** 2)
