@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""This program define a class Rectangle with private attributes and methods"""
+"""
+A Rectangle Class with the private instance attributes width, height
+and public methods
+"""
 
 
 class Rectangle():
     """
     A Rectangle Class with the private instance attributes width and height
-    and public methods
     """
 
     def __init__(self, width=0, height=0):
@@ -28,6 +30,18 @@ class Rectangle():
             return 0
 
         return (self.__width * 2) + (self.__height * 2)
+
+    def __str__(self):
+        """
+        Function to print a Square with #
+        """
+
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        final = ['#' * self.__width for line in range(self.__height)]
+
+        return '\n'.join(final)
 
     @property
     def width(self):
