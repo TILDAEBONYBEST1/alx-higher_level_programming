@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
 A Rectangle Class with the private instance attributes width, height
-and public methods
+, public methods and special methods
 """
 
 
 class Rectangle():
     """
-    A Rectangle Class with the private instance attributes width and height
+    A Rectangle Class with the private instance attributes width, height,
+    public methods and special methods
     """
 
     def __init__(self, width=0, height=0):
@@ -39,9 +40,13 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        final = ['#' * self.__width for line in range(self.__height)]
+        final = [character * self.__width for character in '#' * self.__height]
 
         return '\n'.join(final)
+
+    def __repr__(self):
+        """Returns an “official” string representation of a Rectangle"""
+        return f'Rectangle({self.__width}, {self.__height})'
 
     @property
     def width(self):
