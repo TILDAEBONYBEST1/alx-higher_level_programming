@@ -13,6 +13,7 @@ class Rectangle():
     """
 
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """
@@ -38,13 +39,14 @@ class Rectangle():
 
     def __str__(self):
         """
-        Function to print a Square with #
+        Function to print a Square with the print_symbol
         """
 
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        final = [character * self.__width for character in '#' * self.__height]
+        final = [str(self.print_symbol) * self.__width
+                 for character in range(self.__height)]
 
         return '\n'.join(final)
 
