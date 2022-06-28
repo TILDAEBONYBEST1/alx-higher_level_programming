@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 A Rectangle Class with public class attributes, private instance attributes
-(width, height), public methods, special methods and static methods
+(width, height), public methods, special methods,
+static methods and class methods
 """
 
 
@@ -9,7 +10,7 @@ class Rectangle():
     """
     A Rectangle Class with public class attributes,
     private instance attributes width, height, public methods,
-    special methods and static methods.
+    special methods, static methods and class methods.
     """
 
     number_of_instances = 0
@@ -22,8 +23,8 @@ class Rectangle():
             - width (default = 0): int
             - heigth (default = 0): int
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def area(self):
@@ -116,3 +117,8 @@ class Rectangle():
         if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
             return rect_1
         return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new Rectangle instance with width == height == size"""
+        return cls(size, size)
