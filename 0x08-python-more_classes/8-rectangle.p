@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
 A Rectangle Class with public class attributes, private instance attributes
-(width, height), public methods and special methods
+(width, height), public methods, special methods and static methods
 """
 
 
 class Rectangle():
     """
     A Rectangle Class with public class attributes,
-    private instance attributes width, height, public methods and
-    special methods.
+    private instance attributes width, height, public methods,
+    special methods and static methods.
     """
 
     number_of_instances = 0
@@ -98,3 +98,21 @@ class Rectangle():
             raise ValueError('height must be >= 0')
 
         self.__height = value
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Return the biggest rectangle based on the area
+          Args:
+            - rect_1: Rectangle
+            - rect_2: Rectangle
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
+            return rect_1
+        return rect_2
